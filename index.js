@@ -7,12 +7,13 @@ const Brush = require("./db/Brush")
 const Multi = require("./db/Multi")
 const Circle = require("./db/Circle")
 const Radar = require("./db/Radar")
-const port = 5000;
 const cors = require('cors');
 const jwt = require("jsonwebtoken");
 const jwtKey = "isro@secretkey"
 const dotenv = require("dotenv");
-dotenv.config();
+dotenv.config({ path: "./config.env" });
+
+const PORT = 5000;
 
 app.use(cors());
 app.use(express.json());
@@ -51,9 +52,11 @@ app.post("/signup", async (req, resp) => {
 });
 
 app.post("/login", async (req, resp) => {
-    // console.log(req.body.email);
+    console.log(req.body);
     const result = await User.findOne(req.body);
+    console.log(User);
     if (result) {
+
         jwt.sign({ result }, jwtKey, { expiresIn: "2h" }, (error, token) => {
             if (error) {
                 resp.send({ result: "user not found" })
@@ -141,6 +144,6 @@ function verifyToken(req, resp, next) {
     }
 }
 
-app.listen(port, () => {
-    console.log(`Server is running on port: ${port}`);
+app.listen(PORT, () => {
+    console.log(`Server is running on port: ${PORT}`);
 })
