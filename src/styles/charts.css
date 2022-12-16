@@ -1,0 +1,44 @@
+.mlp-container {
+    margin: 20px 20px 0px 20px;
+    padding: 20px;
+    width: 100vw;
+}
+
+.linechart-container {
+    margin: 20px;
+    padding: 20px;
+    width: 100vw;
+}
+
+.BrushScatter-container {
+    margin: 20px;
+    padding: 20px;
+    width: 100vw;
+}
+
+.radar-conrainer {
+    margin: 20px;
+    padding: 20px;
+    width: 100vw;
+}
+
+.circlefacet-container {
+    margin: 20px;
+    padding: 20px;
+    width: 100vw;
+}
+
+.components-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+.components-heading {
+    margin: 40px;
+    font-size: 40px;
+    color: #fff;
+    font-weight: 50;
+    text-align: center;
+}
